@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 import './FilterButtons.css';
 
 export type FilterType = 'all' | 'completed' | 'pending';
