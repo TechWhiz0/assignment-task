@@ -1,0 +1,97 @@
+.task-form {
+  margin-bottom: 2rem;
+}
+
+.task-form-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background: var(--input-bg);
+  color: var(--text-color);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.task-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-color-light);
+}
+
+.task-input.error {
+  border-color: var(--danger-color);
+  animation: shake 0.3s ease;
+}
+
+.task-input.error:focus {
+  box-shadow: 0 0 0 3px var(--danger-color-light);
+}
+
+.task-submit-btn {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.task-submit-btn:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-color-light);
+}
+
+.task-submit-btn:active {
+  transform: translateY(0);
+}
+
+.task-error {
+  margin-top: 0.5rem;
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .task-form-group {
+    flex-direction: column;
+  }
+
+  .task-input {
+    min-width: 100%;
+  }
+
+  .task-submit-btn {
+    width: 100%;
+  }
+}
